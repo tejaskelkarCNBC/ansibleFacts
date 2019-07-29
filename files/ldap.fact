@@ -1,0 +1,11 @@
+#!/bin/bash
+
+LDAP=`cat /etc/openldap/ldap.conf | egrep -v '^$|^#' | grep URI`
+
+cat <<EOF
+
+{
+        "URL" : "$LDAP"
+} 
+
+EOF

@@ -1,0 +1,37 @@
+---
+- hosts: web
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: Create facts.d
+    file:
+      path: /etc/ansible/facts.d
+      state: directory
+      recurse: yes
+    tags:
+      - first
+      - all
+  - name: Create ini style custom fact file
+    file:
+      path: /etc/ansible/facts.d/custom_ini.fact
+      state: touch
+  - name: Add custom fact
+    lineinfile:
+      path: /etc/ansible/facts.d/custom_ini.fact
+      line: "[general]"
+  - name: Add custom fact part 2
+    lineinfile:
+      path: /etc/ansible/facts.d/custom_ini.fact
+      line: "a=10"
+  - name: Add custom fact part 3
+    lineinfile:
+      path: /etc/ansible/facts.d/custom_ini.fact
+      line: "b=20"
+  - name: Copy the script to facts.d
+    copy:
+      src: /home/cloud_user/files/test_fact.fact
+      dest: /etc/ansible/facts.d/test_fact.fact
+  - name: Change the mode of the script
+    file: 
+      path: /etc/ansible/facts.d/test_fact.fact
+      mode: 0755

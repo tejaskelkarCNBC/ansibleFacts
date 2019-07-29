@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ROUTE=`echo ansibletest | sudo -S traceroute -I 18.218.192.232 | sed -n '1p'` 
+
+#printf '{"Route" : "%s"}\n' $ROUTE
+
+cat <<EOF
+
+{
+	"Route" : "$ROUTE"
+} 
+
+EOF

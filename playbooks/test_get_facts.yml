@@ -1,0 +1,10 @@
+- hosts: web
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: Get the Local facts
+    debug:
+      msg: "coming from local custom_ini {{ansible_local.custom_ini}}"
+  - name: Get the local facts test_fact
+    debug:
+      msg: "coming from local test_fact {{ansible_local.test_fact}}"

@@ -1,0 +1,45 @@
+[2019-07-24 17:44:11.514] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2019-07-24 17:44:11.535] [remoteagent] [info] Extension host agent listening on 41738
+[2019-07-24 17:44:16.678] [remoteagent] [info] ==> Received a management connection
+[2019-07-24 17:44:16.679] [remoteagent] [info] ==> Received an extension host connection.
+[2019-07-24 17:44:16.679] [remoteagent] [info] ==> Using UI language: en
+[2019-07-24 17:44:16.744] [remoteagent] [info] Scanning extensions using UI language: en
+[2019-07-24 17:44:31.504] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2019-07-24 17:44:36.683] [remoteagent] [info] Got delay-shutdown request while in shutdown timeout, delaying
+[2019-07-24 17:44:36.683] [remoteagent] [info] Cancelling previous shutdown timeout
+[2019-07-24 17:44:40.118] [remoteagent] [info] ==> Received a management connection
+[2019-07-24 17:44:40.119] [remoteagent] [info] ==> Received an extension host connection.
+[2019-07-24 17:44:40.119] [remoteagent] [info] ==> Using UI language: en
+[2019-07-24 17:44:40.207] [remoteagent] [info] Scanning extensions using UI language: en
+[2019-07-24 17:44:42.160] [remoteagent] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/cloud_user/playbooks/.vscode'
+[2019-07-24 17:44:42.164] [remoteagent] [info] ==> Received a management connection
+[2019-07-24 17:48:45.791] [remoteagent] [info] Cancelling previous shutdown timeout
+[2019-07-24 17:48:45.792] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2019-07-24 17:48:50.689] [remoteagent] [info] Got delay-shutdown request while in shutdown timeout, delaying
+[2019-07-24 17:48:50.689] [remoteagent] [info] Cancelling previous shutdown timeout
+[2019-07-24 17:48:53.919] [remoteagent] [info] ==> Received a management connection
+[2019-07-24 17:48:53.920] [remoteagent] [info] ==> Received an extension host connection.
+[2019-07-24 17:48:53.920] [remoteagent] [info] ==> Using UI language: en
+[2019-07-24 17:48:54.007] [remoteagent] [info] Scanning extensions using UI language: en
+[2019-07-24 17:48:57.297] [remoteagent] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/cloud_user/files/.vscode'
+[2019-07-24 17:48:57.355] [remoteagent] [info] ==> Received a management connection
+[2019-07-24 17:53:50.690] [remoteagent] [info] New EH opened, aborting shutdown
+[2019-07-24 18:01:55.424] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2019-07-24 18:01:59.629] [remoteagent] [info] Got delay-shutdown request while in shutdown timeout, delaying
+[2019-07-24 18:01:59.629] [remoteagent] [info] Cancelling previous shutdown timeout
+[2019-07-24 18:02:02.519] [remoteagent] [info] ==> Received a management connection
+[2019-07-24 18:02:02.520] [remoteagent] [info] ==> Received an extension host connection.
+[2019-07-24 18:02:02.520] [remoteagent] [info] ==> Using UI language: en
+[2019-07-24 18:02:02.584] [remoteagent] [info] Scanning extensions using UI language: en
+[2019-07-24 18:02:10.204] [remoteagent] [info] ==> Received a management connection
+[2019-07-24 18:02:10.207] [remoteagent] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/cloud_user/.vscode'
+[2019-07-24 18:06:59.629] [remoteagent] [info] New EH opened, aborting shutdown

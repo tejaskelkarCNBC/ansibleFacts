@@ -1,0 +1,47 @@
+#!/usr/bin/python
+
+import json, shlex, sys, subprocess, os, pprint
+from subprocess import Popen, PIPE, check_output
+#from ansible.module_utils.basic import *
+
+
+#os.environ['COMMAND'] = ""
+
+#def bashCommand():
+#    user_command = sys.argv[1]
+#    print user_command
+#    inputCommand = subprocess.check_output([user_command], shell=True, universal_newlines=False)
+#    print(inputCommand)
+    #outputCommand = inputCommand.communicate()
+    
+#    outputCommand = shlex.split(inputCommand)
+#
+    #convertJSON = json.JSONDecoder(inputCommand)
+
+#    convertJSON = json.dumps({'Output' : outputCommand}, indent = 4, sort_keys = True)
+#    for command in commands:
+#        cmd = command
+#        output = subprocess.check_output(cmd, shell=True)
+#        print(json.loads(output))
+    
+    #print(outputCommand)
+#    object = print(convertJSON)
+#    return object
+    #print os.environ
+#bashCommand()
+
+def bashCommand():
+    user_command = sys.argv[1]
+    outputCommand = subprocess.Popen([user_command], shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+    #retcode = outputCommand.
+    data = outputCommand.stdout.read().splitlines()
+
+    return data
+
+cb = bashCommand()
+#testjson = open('/etc/ansible/facts.d/getData.fact', 'w+')
+json_obj = json.dumps({'Output' : cb}, sort_keys=True, indent=4)
+print json_obj
+#testjson.write(str(cb))
+#testjson.close()
+#exit(0)

@@ -1,0 +1,33 @@
+#To get custom fact
+---
+
+- hosts: web
+  become: true
+  tasks:
+    - name: ensure custom facts directory exists
+      file:   
+        path: "/etc/ansible/facts.d"
+        recurse: yes
+        state: "directory"
+    - name: install packages
+      yum: 
+        name: "{{ packages }}" 
+      vars:
+        packages:
+        - traceroute
+    - name: install traceroute custom fact module for port address
+      copy:   
+        src: /home/cloud_user/files/traceroute.fact
+        dest: /etc/ansible/facts.d/traceroute.fact
+        mode: 0755
+    - name: install LDAP custom fact module for port address
+      copy:
+        src: /home/cloud_user/files/ldap.fact
+        dest: /etc/ansible/facts.d/ldap.fact
+        mode: 0755
+    - name: execute the traceroute script
+      script: /home/cloud_user/files/traceroute.fact
+    - name: execute the LDAP script
+      script: /home/cloud_user/files/ldap.fact
+    - name: reload setup with ansible_local
+      setup: filter="ansible_local"

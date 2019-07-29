@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/cloud_user/out'
+let g:netrw_dirhist_2='/home/cloud_user/cmdb'
+let g:netrw_dirhist_3='/etc/ansible/facts.d'
+let g:netrw_dirhist_4='/home/cloud_user/files'
+let g:netrw_dirhist_5='/home/cloud_user/playbooks'
+let g:netrw_dirhist_6='/home/cloud_user/files'
+let g:netrw_dirhist_7='/home/cloud_user/playbooks'
+let g:netrw_dirhist_8='/home/cloud_user/files/scripts'
+let g:netrw_dirhist_9='/home/cloud_user/.ansible'

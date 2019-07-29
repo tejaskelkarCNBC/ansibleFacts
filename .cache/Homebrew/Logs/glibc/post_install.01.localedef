@@ -1,0 +1,9 @@
+2019-07-15 14:29:43 +0000
+
+/home/linuxbrew/.linuxbrew/Cellar/glibc/2.23/bin/localedef
+-i
+en_US
+-f
+UTF-8
+en_US.UTF-8
+

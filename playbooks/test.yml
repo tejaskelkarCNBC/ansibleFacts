@@ -1,0 +1,52 @@
+---
+
+- name: python bash command script
+  hosts: all
+  become: true
+  become_user: root
+  become_method: sudo
+  gather_facts: 
+  vars_prompt:
+    - name: command
+      prompt: "Enter Bash Command "
+      private: no
+  tasks:
+    - name: ensure custom facts directory exists
+      file:
+        path: "/etc/ansible/facts.d"
+        recurse: yes
+        state: "directory"
+        owner: root
+        group: root
+        #mode: 0777
+    - name: install python custom fact module for port address
+      copy:
+        src: /home/cloud_user/files/scripts/getData.fact
+        dest: /etc/ansible/facts.d/
+        #remote_src: true
+        mode: 0777
+    - name: execute the python script  
+      script: /home/cloud_user/files/scripts/getData.fact {{ command }}
+      args:
+        mode: 0777
+        chdir: /etc/ansible/facts.d/
+        #remote_src: true 
+        #executable: /etc/ansible/facts.d/getData.fact
+      register: command1
+    - set_fact:
+        getData: "{{command1.stdout | from_json}}"
+    #- set_fact:
+    #    getData2: "{{command1.results | map(attribute='ansible_facts.getData') | list}}"
+    #- name: move file to facts.d directory
+     # command: mv /home/cloud_user/test.json /etc/ansible/facts.d/
+    - name: reload setup with ansible_local
+      setup: filter="ansible_local"
+    - debug:
+        var: command1.stdout_lines
+    - debug: 
+        #msg: {{ command }}
+        var: ansible_local.getData
+    - debug:
+        var: getData 
+    #- debug:
+    #    var: getData2

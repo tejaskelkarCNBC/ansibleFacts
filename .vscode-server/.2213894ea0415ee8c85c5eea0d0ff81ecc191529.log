@@ -1,0 +1,40 @@
+
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+IP Address: 172.31.96.88
+webview server listening on 40496
+Extension host agent listening on 41096
+==> Received a management connection
+==> Received an extension host connection.
+==> Using UI language: en
+bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell
+bash: /bin/brew: No such file or directory
+==> Received a management connection
+==> Received a management connection
+==> Received an extension host connection.
+==> Using UI language: en
+==> Received a management connection
+{ Error: write EPIPE
+    at WriteWrap.afterWrite [as oncomplete] (net.js:788:14) errno: 'EPIPE', code: 'EPIPE', syscall: 'write' }
+{ Error: write EPIPE
+    at WriteWrap.afterWrite [as oncomplete] (net.js:788:14) errno: 'EPIPE', code: 'EPIPE', syscall: 'write' }
+Error: Unexpected SIGPIPE
+    at process.on (/home/cloud_user/.vscode-server/bin/2213894ea0415ee8c85c5eea0d0ff81ecc191529/out/bootstrap.js:5:192)
+    at process.emit (events.js:182:13)
+Error: Unexpected SIGPIPE
+    at process.on (/home/cloud_user/.vscode-server/bin/2213894ea0415ee8c85c5eea0d0ff81ecc191529/out/bootstrap.js:5:192)
+    at process.emit (events.js:182:13)
+Error: Unexpected SIGPIPE
+    at process.on (/home/cloud_user/.vscode-server/bin/2213894ea0415ee8c85c5eea0d0ff81ecc191529/out/bootstrap.js:5:192)
+    at process.emit (events.js:182:13)
+Error: Unexpected SIGPIPE
+    at process.on (/home/cloud_user/.vscode-server/bin/2213894ea0415ee8c85c5eea0d0ff81ecc191529/out/bootstrap.js:5:192)
+    at process.emit (events.js:182:13)

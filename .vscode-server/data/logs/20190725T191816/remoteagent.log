@@ -1,0 +1,23 @@
+[2019-07-25 19:18:16.900] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2019-07-25 19:18:16.922] [remoteagent] [info] Extension host agent listening on 41096
+[2019-07-25 19:18:22.206] [remoteagent] [info] ==> Received a management connection
+[2019-07-25 19:18:22.208] [remoteagent] [info] ==> Received an extension host connection.
+[2019-07-25 19:18:22.208] [remoteagent] [info] ==> Using UI language: en
+[2019-07-25 19:18:22.291] [remoteagent] [info] Scanning extensions using UI language: en
+[2019-07-25 19:18:22.410] [remoteagent] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/cloud_user/playbooks/.vscode'
+[2019-07-25 19:18:26.393] [remoteagent] [info] ==> Received a management connection
+[2019-07-25 19:18:45.372] [remoteagent] [info] ==> Received a management connection
+[2019-07-25 19:18:45.372] [remoteagent] [info] ==> Received an extension host connection.
+[2019-07-25 19:18:45.372] [remoteagent] [info] ==> Using UI language: en
+[2019-07-25 19:18:45.435] [remoteagent] [info] Scanning extensions using UI language: en
+[2019-07-25 19:18:45.904] [remoteagent] [info] ==> Received a management connection
+[2019-07-25 19:18:45.966] [remoteagent] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/cloud_user/files/.vscode'

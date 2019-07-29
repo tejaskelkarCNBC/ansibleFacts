@@ -1,0 +1,2 @@
+[web]
+vkelkar13c ansible_python_interpreter: "/home/linuxbrew/.linuxbrew/opt/python/libexec/bin"
