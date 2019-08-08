@@ -1,0 +1,30 @@
+--- # Bootstrap Webservers
+
+- name: Configure apache server
+  hosts: web
+  become: true
+  gather_facts: yes
+  tasks:
+     - name: Install httpd
+       yum:
+         name: httpd
+         state: latest
+       register: yum_result
+       #ignore_errors: true
+       #become: yes
+       notify:
+         - restart httpd
+     - name: Ensure httpd is running
+       service:
+         name: httpd
+         state: started
+       register: yum_result
+       #ignore_errors: true
+       #become: yes
+     - name: Restart httpd
+       service:
+         name: httpd
+         state: restarted
+         enabled: true
+       #ignore_errors: true
+       #become: yes

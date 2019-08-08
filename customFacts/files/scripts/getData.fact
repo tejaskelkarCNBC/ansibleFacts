@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+import json, shlex, sys, subprocess, os, pprint
+from subprocess import Popen, PIPE, check_output
+
+def bashCommand():
+
+    # Inputs entered bash command from playbook execution into .txt file with read permissions and assigns it to variable 'f'	
+    f = open("/tmp/command.txt", "r")
+
+    # Assigns 'f' to user_command variable
+    user_command =  f.readline()
+    f.close()
+
+    # Uses subprocess python module to execute command on remote host
+    outputCommand = subprocess.Popen([user_command], shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+    data = outputCommand.stdout.read().splitlines()
+
+    return data
+
+# Dumps output of command into valid JSON
+
+cb = bashCommand()
+json_obj = json.dumps({'Output' : cb}, sort_keys=True, indent=4)
+print json_obj

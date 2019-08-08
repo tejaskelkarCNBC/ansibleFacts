@@ -1,0 +1,2 @@
+cat /etc/security/limits.d/20-nproc.conf
+cat /home/cloud_user/cust_cols.conf

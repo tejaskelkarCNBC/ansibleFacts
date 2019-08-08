@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+RETURN_STR=`echo "Hello World"`
+
+
+cat <<EOF
+
+{
+        "Output" : "$RETURN_STR"
+} 
+
+EOF
+

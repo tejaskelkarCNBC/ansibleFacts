@@ -1,0 +1,33 @@
+#To get custom fact
+---
+
+- hosts: web
+  become: true
+  vars_prompt:
+    - name: command
+      prompt: "Enter Bash Command "
+      private: no
+  tasks:
+    - name: ensure custom facts directory exists
+      file:   
+        path: "/etc/ansible/facts.d"
+        recurse: yes
+        state: "directory"
+    - name: install packages
+      yum: 
+        name: "{{ packages }}" 
+      vars:
+        packages:
+        - traceroute
+    - name: install getData custom fact 
+      copy:   
+        src: /home/cloud_user/files/scripts/getData.fact
+        dest: /etc/ansible/facts.d/getData.fact
+        mode: 0755
+    - name: Ansible create file with content example
+      copy:
+        dest: "/tmp/command.txt"
+        content: |
+          {{command}}
+    - name: execute the getData script
+      shell: /etc/ansible/facts.d/getData.fact

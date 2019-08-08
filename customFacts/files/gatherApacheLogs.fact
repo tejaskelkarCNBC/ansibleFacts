@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+RETURN_STR=`cat /tmp/access_log`
+
+
+cat <<EOF
+
+{
+        "Log" : "$RETURN_STR"
+} 
+
+EOF
+

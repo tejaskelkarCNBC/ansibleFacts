@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+import json, shlex, sys, subprocess, os, pprint
+from subprocess import Popen, PIPE, check_output
+
+def bashCommand():
+    filepath = '/home/cloud_user/command.txt'
+    ret = []
+    with open(filepath, 'r') as filepath:
+	commands = map(str.rstrip, filepath.readlines())
+	#print(commands)
+	print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+	for command in commands:
+		ret.append(subprocess.Popen([command], shell=True, stdout=subprocess.PIPE, universal_newlines=False).communicate()[0])
+	#print(ret)
+	return ret
+    filepath.close()
+bashCommands = bashCommand()
+#pprint.pprint(cb)
+#bashCommands.replace("\n", "")
+#print(bashCommands)
+#print({"OUTPUT": cb})
+json_obj = json.dumps({'Output' : bashCommands}, sort_keys=True, indent=4, separators=(',',': '))
+result = str(json_obj)
+print(result)

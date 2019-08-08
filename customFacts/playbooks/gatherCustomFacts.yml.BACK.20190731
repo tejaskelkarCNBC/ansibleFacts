@@ -1,0 +1,63 @@
+#To get custom fact
+---
+
+- hosts: web
+  become: true
+  tasks:
+    - name: ensure custom facts directory exists
+      file:   
+        path: "/etc/ansible/facts.d"
+        recurse: yes
+        state: "directory"
+    - name: install packages
+      yum: 
+        name: "{{ packages }}" 
+      vars:
+        packages:
+        - traceroute
+
+    - name: install helloWorld custom fact 
+      copy:   
+        src: /home/cloud_user/files/helloWorld.fact
+        dest: /etc/ansible/facts.d/helloWorld.fact
+        mode: 0755
+
+    - name: install getData.vbk custom fact 
+      copy:   
+        src: /home/cloud_user/files/scripts/getData.fact
+        dest: /etc/ansible/facts.d/getData.fact
+        mode: 0755
+
+
+    - name: install LDAP custom fact 
+      copy:   
+        src: /home/cloud_user/files/ldap2.fact
+        dest: /etc/ansible/facts.d/ldap2.fact
+        mode: 0755
+
+    - name: install netstat.sh 
+      copy:   
+        src: /home/cloud_user/files/netstat.sh
+        dest: /etc/ansible/facts.d/netstat.sh
+        mode: 0755
+
+    - name: install gatherLogFile custom fact 
+      copy:   
+        src: /home/cloud_user/files/gatherLogFile.fact
+        dest: /etc/ansible/facts.d/gatherLogFile.fact
+        mode: 0755
+
+    - name: execute the helloWorld script
+      shell: /etc/ansible/facts.d/helloWorld.fact
+
+    - name: execute the getData.vbk script
+      shell: /etc/ansible/facts.d/getData.fact.vbk ls
+
+    - name: execute the LDAP script
+      shell: /etc/ansible/facts.d/ldap2.fact
+
+    - name: execute the netstat.sh 
+      shell: /etc/ansible/facts.d/netstat.sh
+
+    - name: execute the gatherLogFile script
+      shell: /etc/ansible/facts.d/gatherLogFile.fact

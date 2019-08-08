@@ -1,0 +1,6 @@
+[web]
+vkelkar13c ansible_host=vkelkar13c.mylabserver.com ansible_python_interpreter=/usr/bin/python2.7
+[web:vars]
+ansible_connection=ssh
+ansible_user=cloud_user
+ansible_password=ansibletest

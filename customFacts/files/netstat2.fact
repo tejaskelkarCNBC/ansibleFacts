@@ -1,0 +1,5 @@
+#!/bin/bash
+
+NETSTAT=`netstat -ntlpu | grep LISTEN`> /dev/null
+
+echo -e "{\"netstat\":\""$NETSTAT"\"}"
